@@ -3,15 +3,17 @@
 Spark with Python
 This repository provides examples of how to use Spark with Python, including Spark Streaming, Machine Learning, and Spark 3.0 DataFrames. The examples are meant to serve as a starting point for your own Spark projects.
 
-Requirements
-Python 3.x
-Apache Spark (version 3.x)
-Jupyter Notebook (optional, but recommended)
-Installation
-Install Python 3.x on your system.
-Download and extract the latest version of Apache Spark from the official website: https://spark.apache.org/downloads.html
-Set the SPARK_HOME environment variable to the directory where you extracted Spark.
-(Optional) Install Jupyter Notebook by running pip install jupyter in your terminal.
+## Requirements
+  1. Python 3.x
+  2. Apache Spark (version 3.x)
+  3. Jupyter Notebook (optional, but recommended)
+
+## Installation
+  Install Python 3.x on your system.
+  Download and extract the latest version of Apache Spark from the official website: https://spark.apache.org/downloads.html
+  Set the SPARK_HOME environment variable to the directory where you extracted Spark.
+  (Optional) Install Jupyter Notebook by running pip install jupyter in your terminal.
+
 Examples
 The examples are organized into subdirectories based on the topic they cover:
 
