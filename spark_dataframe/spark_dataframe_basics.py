@@ -40,3 +40,11 @@ print(df_2.columns)
 
 # Compute basic statistics of the DataFrame
 df_2.describe().show()
+
+# Get a column from dataframe
+df_selected_column_1 = df_2['name']
+print(type(df_selected_column_1))
+
+# Get a column from dataframe with dataframe type
+df_selected_column_2 = df_2.select('name')
+print(type(df_selected_column_2))
