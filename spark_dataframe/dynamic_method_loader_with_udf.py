@@ -3,6 +3,8 @@ from importlib import import_module
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import col, udf
 
+from spark_session_utils import SparkSessionUtils
+
 
 def dynamic_method_loader(module_name, method_name):
     try:
@@ -18,7 +20,7 @@ def dynamic_method_loader(module_name, method_name):
 
 
 if __name__ == '__main__':
-    spark = SparkSession.builder.appName('Spark').getOrCreate()
+    spark = SparkSessionUtils('dynamic method loader with udf').get_spark_session()
     columns = ["Seqno", "Name"]
     data = [("1", "john jones"),
             ("2", "tracey smith"),

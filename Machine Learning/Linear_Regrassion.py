@@ -1,10 +1,11 @@
 from pyspark.ml.regression import LinearRegression
-from pyspark.sql import SparkSession
+
+from spark_session_utils import SparkSessionUtils
 
 if __name__ == '__main__':
     # Create a SparkSession
     print("Creating SparkSession...")
-    spark_context = SparkSession.builder.appName('Linear Regression').getOrCreate()
+    spark_context = SparkSessionUtils('Linear Regression').get_spark_session()
 
     # Load the data using LIBSVM format
     print("Loading data...")

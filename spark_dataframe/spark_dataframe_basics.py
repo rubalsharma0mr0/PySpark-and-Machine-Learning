@@ -1,8 +1,9 @@
-from pyspark.sql import SparkSession
 from pyspark.sql.types import StructField, StringType, IntegerType, StructType
 
+from spark_session_utils import SparkSessionUtils
+
 # Create a SparkSession
-spark = SparkSession.builder.appName("Test Spark DataFrame").getOrCreate()
+spark = SparkSessionUtils("Spark Dataframe Basic").get_spark_session()
 
 # Read a JSON file into a DataFrame
 df_1 = spark.read.json("../data_source/people.json")

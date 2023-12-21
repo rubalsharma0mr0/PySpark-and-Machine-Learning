@@ -1,6 +1,8 @@
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import col, udf
 
+from spark_session_utils import SparkSessionUtils
+
 code_string = '''def convert_case(input_string):
         res_str = ""
         arr = input_string.split(" ")
@@ -20,7 +22,7 @@ def do_run_script_python(code_str, input_data):
 
 
 if __name__ == '__main__':
-    spark = SparkSession.builder.appName('SparkByExamples.com').getOrCreate()
+    spark = SparkSessionUtils('dynamic method loader with exec').get_spark_session()
     columns = ["Seqno", "Name"]
     data = [("1", "john jones"),
             ("2", "tracey smith"),

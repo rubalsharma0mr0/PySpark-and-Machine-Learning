@@ -1,7 +1,8 @@
-from pyspark.sql import SparkSession
 from pyspark.sql.functions import stddev, format_number
 
-spark = SparkSession.builder.appName("Groupby and Aggregate Operations").getOrCreate()
+from spark_session_utils import SparkSessionUtils
+
+spark = SparkSessionUtils("Groupby and Aggregate Operations").get_spark_session()
 
 df = spark.read.csv('../data_source/sales_info.csv', inferSchema=True, header=True)
 df.printSchema()

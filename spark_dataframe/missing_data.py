@@ -1,7 +1,8 @@
-from pyspark.sql import SparkSession
 from pyspark.sql.functions import mean
 
-spark = SparkSession.builder.appName("Groupby and Aggregate Operations").getOrCreate()
+from spark_session_utils import SparkSessionUtils
+
+spark = SparkSessionUtils("Missing Data").get_spark_session()
 
 df = spark.read.csv('../data_source/ContainsNull.csv', inferSchema=True, header=True)
 df.printSchema()

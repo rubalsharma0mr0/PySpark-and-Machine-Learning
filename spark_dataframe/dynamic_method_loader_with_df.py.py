@@ -1,4 +1,4 @@
-from pyspark.sql import SparkSession
+from spark_session_utils import SparkSessionUtils
 
 
 def do_run_script_python(code_string, input_data):
@@ -8,7 +8,7 @@ def do_run_script_python(code_string, input_data):
 
 
 if __name__ == '__main__':
-    spark = SparkSession.builder.appName('SparkByExamples.com').getOrCreate()
+    spark = SparkSessionUtils('Dynamic Method Loader').get_spark_session()
     columns = ["Seqno", "Name"]
     data = [("1", "john jones"),
             ("2", "tracey smith"),
